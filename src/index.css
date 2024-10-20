@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BASE STYLES */
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+main {
+  @apply mt-20;
+}
+/* COMMON STYLES */
+.wrapper {
+  @apply container mx-auto px-5 md:px-0;
+}
+
+/* SWIPER CSS */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Custom styles for Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #dd1414;
+  visibility: visible;
+  background-color: #fbbf24 !important;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #fbbf24 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fbbf24 !important;
+}
+
+/* NAVBAR DESIGN */
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-item::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  transform: translate(-50%, -50%);
+  height: 2px;
+  left: 50%;
+  bottom: -5px;
+  background-color: #fbbf24;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-item:hover::before {
+  width: 100%;
+}
+
+/* h2 style */
+h2::before {
+  content: "";
+  background: #fbbf24;
+  width: 20%;
+  height: 2px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50px;
+  left: 50%;
+}
+
+h2::after {
+  content: "";
+  background: #ffffff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  border: 2px solid #fbbf24;
+}
+
+/* books layout design */
+.cart-item {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  padding: 10px;
+}
+
+.cover-img img {
+  transition: all 0.3s ease-in-out;
+}
+
+/********** Slider Design Starts  */
+.slider {
+  height: calc(100vh - 5rem);
+  width: 500vw;
+  display: flex;
+  transition: 1s ease;
+}
+
+.slide {
+  width: 100vw;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/********** Slide Design Starts  */
+.slide-btn {
+  position: relative;
+}
+
+.slide-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #fbbf24;
+  width: 0%;
+  transition: 0.5s ease;
+}
+
+.slide-btn:hover::before {
+  width: 100%;
+}
